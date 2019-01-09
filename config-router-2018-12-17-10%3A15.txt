@@ -1,0 +1,643 @@
+package dhcp
+
+config dnsmasq
+	option domainneeded '1'
+	option boguspriv '1'
+	option filterwin2k '0'
+	option localise_queries '1'
+	option rebind_protection '1'
+	option rebind_localhost '1'
+	option local '/lan/'
+	option domain 'lan'
+	option expandhosts '1'
+	option nonegcache '0'
+	option authoritative '1'
+	option readethers '1'
+	option leasefile '/tmp/dhcp.leases'
+	option resolvfile '/tmp/resolv.conf.auto'
+
+config dhcp 'lan'
+	option interface 'lan'
+	option start '100'
+	option limit '150'
+	option leasetime '12h'
+	option dhcpv6 'server'
+	option ra 'server'
+	option force '1'
+	option ra_management '1'
+
+config dhcp 'wan'
+	option interface 'wan'
+	option ignore '1'
+
+config odhcpd 'odhcpd'
+	option maindhcp '0'
+	option leasefile '/tmp/hosts/odhcpd'
+	option leasetrigger '/usr/sbin/odhcpd-update'
+
+package dropbear
+
+config dropbear
+	option PasswordAuth 'on'
+	option Port '22'
+
+package firewall
+
+config defaults
+	option syn_flood '1'
+	option input 'ACCEPT'
+	option output 'ACCEPT'
+	option forward 'ACCEPT'
+
+config zone
+	option name 'lan'
+	list network 'lan'
+	option input 'ACCEPT'
+	option output 'ACCEPT'
+	option forward 'ACCEPT'
+
+config zone
+	option name 'wan'
+	list network 'wan'
+	list network 'wan6'
+	option output 'ACCEPT'
+	option masq '1'
+	option mtu_fix '1'
+	option input 'ACCEPT'
+	option forward 'ACCEPT'
+
+config forwarding
+	option src 'lan'
+	option dest 'wan'
+
+config rule
+	option name 'Allow-DHCP-Renew'
+	option src 'wan'
+	option proto 'udp'
+	option dest_port '68'
+	option target 'ACCEPT'
+	option family 'ipv4'
+
+config rule
+	option name 'Allow-Ping'
+	option src 'wan'
+	option proto 'icmp'
+	option icmp_type 'echo-request'
+	option family 'ipv4'
+	option target 'ACCEPT'
+
+config rule
+	option name 'Allow-DHCPv6'
+	option src 'wan'
+	option proto 'udp'
+	option src_ip 'fe80::/10'
+	option src_port '547'
+	option dest_ip 'fe80::/10'
+	option dest_port '546'
+	option family 'ipv6'
+	option target 'ACCEPT'
+
+config rule
+	option name 'Allow-ICMPv6-Input'
+	option src 'wan'
+	option proto 'icmp'
+	list icmp_type 'echo-request'
+	list icmp_type 'echo-reply'
+	list icmp_type 'destination-unreachable'
+	list icmp_type 'packet-too-big'
+	list icmp_type 'time-exceeded'
+	list icmp_type 'bad-header'
+	list icmp_type 'unknown-header-type'
+	list icmp_type 'router-solicitation'
+	list icmp_type 'neighbour-solicitation'
+	list icmp_type 'router-advertisement'
+	list icmp_type 'neighbour-advertisement'
+	option limit '1000/sec'
+	option family 'ipv6'
+	option target 'ACCEPT'
+
+config rule
+	option name 'Allow-ICMPv6-Forward'
+	option src 'wan'
+	option dest '*'
+	option proto 'icmp'
+	list icmp_type 'echo-request'
+	list icmp_type 'echo-reply'
+	list icmp_type 'destination-unreachable'
+	list icmp_type 'packet-too-big'
+	list icmp_type 'time-exceeded'
+	list icmp_type 'bad-header'
+	list icmp_type 'unknown-header-type'
+	option limit '1000/sec'
+	option family 'ipv6'
+	option target 'ACCEPT'
+
+config include
+	option path '/etc/firewall.user'
+
+package firewall
+
+config defaults
+	option syn_flood '1'
+	option input 'ACCEPT'
+	option output 'ACCEPT'
+	option forward 'ACCEPT'
+
+config zone
+	option name 'lan'
+	list network 'lan'
+	option input 'ACCEPT'
+	option output 'ACCEPT'
+	option forward 'ACCEPT'
+
+config zone
+	option name 'wan'
+	list network 'wan'
+	list network 'wan6'
+	option output 'ACCEPT'
+	option masq '1'
+	option mtu_fix '1'
+	option input 'ACCEPT'
+	option forward 'ACCEPT'
+
+config forwarding
+	option src 'lan'
+	option dest 'wan'
+
+config rule
+	option name 'Allow-DHCP-Renew'
+	option src 'wan'
+	option proto 'udp'
+	option dest_port '68'
+	option target 'ACCEPT'
+	option family 'ipv4'
+
+config rule
+	option name 'Allow-Ping'
+	option src 'wan'
+	option proto 'icmp'
+	option icmp_type 'echo-request'
+	option family 'ipv4'
+	option target 'ACCEPT'
+
+config rule
+	option name 'Allow-DHCPv6'
+	option src 'wan'
+	option proto 'udp'
+	option src_ip 'fe80::/10'
+	option src_port '547'
+	option dest_ip 'fe80::/10'
+	option dest_port '546'
+	option family 'ipv6'
+	option target 'ACCEPT'
+
+config rule
+	option name 'Allow-ICMPv6-Input'
+	option src 'wan'
+	option proto 'icmp'
+	list icmp_type 'echo-request'
+	list icmp_type 'echo-reply'
+	list icmp_type 'destination-unreachable'
+	list icmp_type 'packet-too-big'
+	list icmp_type 'time-exceeded'
+	list icmp_type 'bad-header'
+	list icmp_type 'unknown-header-type'
+	list icmp_type 'router-solicitation'
+	list icmp_type 'neighbour-solicitation'
+	list icmp_type 'router-advertisement'
+	list icmp_type 'neighbour-advertisement'
+	option limit '1000/sec'
+	option family 'ipv6'
+	option target 'ACCEPT'
+
+config rule
+	option name 'Allow-ICMPv6-Forward'
+	option src 'wan'
+	option dest '*'
+	option proto 'icmp'
+	list icmp_type 'echo-request'
+	list icmp_type 'echo-reply'
+	list icmp_type 'destination-unreachable'
+	list icmp_type 'packet-too-big'
+	list icmp_type 'time-exceeded'
+	list icmp_type 'bad-header'
+	list icmp_type 'unknown-header-type'
+	option limit '1000/sec'
+	option family 'ipv6'
+	option target 'ACCEPT'
+
+config include
+	option path '/etc/firewall.user'
+
+package fstab
+
+config global
+	option anon_swap '0'
+	option anon_mount '1'
+	option auto_swap '1'
+	option auto_mount '1'
+	option delay_root '5'
+	option check_fs '0'
+
+config mount
+	option target '/mnt/sd*'
+	option enabled '1'
+
+config mount
+	option target '/mnt/mmcblk*'
+	option enabled '1'
+
+package igmpproxy
+
+config igmpproxy
+	option quickleave '1'
+
+config phyint
+	option network 'wan'
+	option direction 'upstream'
+	list altnet '192.168.1.0/24'
+
+config phyint
+	option network 'lan'
+	option direction 'downstream'
+
+package igmpproxy
+
+config igmpproxy
+	option quickleave '1'
+
+config phyint
+	option network 'wan'
+	option direction 'upstream'
+	list altnet '192.168.1.0/24'
+
+config phyint
+	option network 'lan'
+	option direction 'downstream'
+
+package luci
+
+config core 'main'
+	option lang 'auto'
+	option mediaurlbase '/luci-static/openwrt.org'
+	option resourcebase '/luci-static/resources'
+
+config extern 'flash_keep'
+	option uci '/etc/config/'
+	option dropbear '/etc/dropbear/'
+	option openvpn '/etc/openvpn/'
+	option passwd '/etc/passwd'
+	option opkg '/etc/opkg.conf'
+	option firewall '/etc/firewall.user'
+	option uploads '/lib/uci/upload/'
+
+config internal 'languages'
+
+config internal 'sauth'
+	option sessionpath '/tmp/luci-sessions'
+	option sessiontime '3600'
+
+config internal 'ccache'
+	option enable '1'
+
+config internal 'themes'
+	option Bootstrap '/luci-static/bootstrap'
+
+package network
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+	option ula_prefix 'fd41:9e67:67f5::/48'
+
+config interface 'lan'
+	option force_link '1'
+	option type 'bridge'
+	option proto 'static'
+	option netmask '255.255.255.0'
+	option ip6assign '60'
+	option macaddr '00:0C:43:76:20:77'
+	option igmp_snooping '1'
+	option ipaddr '192.168.2.1'
+	option _orig_ifname 'eth0.1 eth0.2 ra0'
+	option _orig_bridge 'true'
+	option ifname 'eth0 eth0.1 eth0.2'
+
+config route
+	option interface 'lan'
+	option target '224.0.0.0'
+	option netmask '240.0.0.0'
+
+config route
+
+package qos
+
+config interface 'wan'
+	option classgroup 'Default'
+	option enabled '0'
+	option upload '128'
+	option download '1024'
+
+config classify
+	option target 'Priority'
+	option ports '22,53'
+	option comment 'ssh, dns'
+
+config classify
+	option target 'Normal'
+	option proto 'tcp'
+	option ports '20,21,25,80,110,443,993,995'
+	option comment 'ftp, smtp, http(s), imap'
+
+config classify
+	option target 'Express'
+	option ports '5190'
+	option comment 'AOL, iChat, ICQ'
+
+config default
+	option target 'Express'
+	option proto 'udp'
+	option pktsize '-500'
+
+config reclassify
+	option target 'Priority'
+	option proto 'icmp'
+
+config default
+	option target 'Bulk'
+	option portrange '1024-65535'
+
+config classgroup 'Default'
+	option classes 'Priority Express Normal Bulk'
+	option default 'Normal'
+
+config class 'Priority'
+	option packetsize '400'
+	option avgrate '10'
+	option priority '20'
+
+config class 'Priority_down'
+	option packetsize '1000'
+	option avgrate '10'
+
+config class 'Express'
+	option packetsize '1000'
+	option avgrate '50'
+	option priority '10'
+
+config class 'Normal'
+	option packetsize '1500'
+	option packetdelay '100'
+	option avgrate '10'
+	option priority '5'
+
+config class 'Normal_down'
+	option avgrate '20'
+
+config class 'Bulk'
+	option avgrate '1'
+	option packetdelay '200'
+
+package sqm
+
+config queue 'eth1'
+	option qdisc 'fq_codel'
+	option linklayer 'none'
+	option enabled '1'
+	option interface 'eth0'
+	option qdisc_advanced '1'
+	option squash_dscp '1'
+	option squash_ingress '1'
+	option ingress_ecn 'ECN'
+	option egress_ecn 'NOECN'
+	option qdisc_really_really_advanced '0'
+	option script 'layer_cake.qos'
+	option download '100000'
+	option upload '70000'
+
+config queue
+	option qdisc 'fq_codel'
+	option linklayer 'none'
+	option enabled '1'
+	option interface 'ra0'
+	option qdisc_advanced '0'
+	option script 'layer_cake.qos'
+	option download '70000'
+	option upload '70000'
+
+package system
+
+config system
+	option hostname 'OpenWrt'
+	option timezone 'UTC'
+
+config timeserver 'ntp'
+	list server '0.openwrt.pool.ntp.org'
+	list server '1.openwrt.pool.ntp.org'
+	list server '2.openwrt.pool.ntp.org'
+	list server '3.openwrt.pool.ntp.org'
+	option enabled '1'
+	option enable_server '0'
+
+package ucitrack
+
+config network
+	option init 'network'
+	list affects 'dhcp'
+	list affects 'radvd'
+
+config wireless
+	list affects 'network'
+
+config firewall
+	option init 'firewall'
+	list affects 'luci-splash'
+	list affects 'qos'
+	list affects 'miniupnpd'
+	list affects 'sqm'
+	list affects 'sqm'
+
+config olsr
+	option init 'olsrd'
+
+config dhcp
+	option init 'dnsmasq'
+
+config dropbear
+	option init 'dropbear'
+
+config httpd
+	option init 'httpd'
+
+config fstab
+	option init 'fstab'
+
+config qos
+	option init 'qos'
+
+config system
+	option init 'led'
+	list affects 'luci_statistics'
+
+config luci_splash
+	option init 'luci_splash'
+
+config upnpd
+	option init 'miniupnpd'
+
+config ntpclient
+	option init 'ntpclient'
+
+config samba
+	option init 'samba'
+
+config tinyproxy
+	option init 'tinyproxy'
+
+config 6relayd
+	option init '6relayd'
+
+config sqm
+	option init 'sqm'
+
+package udpxy
+
+config udpxy
+	option verbose '0'
+	option status '1'
+	option port '4022'
+
+package uhttpd
+
+config uhttpd 'main'
+	list listen_http '0.0.0.0:80'
+	list listen_http '[::]:80'
+	list listen_https '0.0.0.0:443'
+	list listen_https '[::]:443'
+	option home '/www'
+	option rfc1918_filter '1'
+	option max_requests '3'
+	option max_connections '100'
+	option cert '/etc/uhttpd.crt'
+	option key '/etc/uhttpd.key'
+	option cgi_prefix '/cgi-bin'
+	option script_timeout '60'
+	option network_timeout '30'
+	option http_keepalive '20'
+	option tcp_keepalive '1'
+	option ubus_prefix '/ubus'
+
+config cert 'px5g'
+	option days '730'
+	option bits '1024'
+	option country 'DE'
+	option state 'Berlin'
+	option location 'Berlin'
+	option commonname 'OpenWrt'
+
+package wireless
+
+config wifi-device 'mt7620'
+	option type 'mt7620'
+	option vendor 'ralink'
+	option band '2.4G'
+	option auotch '2'
+	option radio '1'
+	option wifimode '9'
+	option bw '1'
+	option country 'US'
+	option region '5'
+	option bgprotect '0'
+	option beacon '100'
+	option dtim '1'
+	option fragthres '2346'
+	option rtsthres '2347'
+	option txpower '100'
+	option txpreamble '1'
+	option shortslot '1'
+	option txburst '1'
+	option pktaggre '1'
+	option ieee80211h '1'
+	option igmpsnoop '1'
+	option ht_bsscoexist '0'
+	option ht_extcha '1'
+	option ht_opmode '0'
+	option ht_gi '1'
+	option ht_rdg '1'
+	option ht_stbc '1'
+	option ht_amsdu '1'
+	option ht_autoba '1'
+	option ht_badec '0'
+	option ht_distkip '1'
+	option ht_ldpc '0'
+	option ht_txstream '2'
+	option ht_rxstream '2'
+	option txbf '0'
+	option channel '6'
+
+config wifi-iface
+	option device 'mt7620'
+	option ifname 'ra0'
+	option mode 'ap'
+	option ssid 'mt7620-2077'
+	option key '12345678'
+	option wmm '1'
+	option apsd '0'
+	option encryption 'psk2+ccmp'
+	option network 'lan'
+
+package wireless
+
+config wifi-device 'mt7620'
+	option type 'mt7620'
+	option vendor 'ralink'
+	option band '2.4G'
+	option auotch '2'
+	option radio '1'
+	option wifimode '9'
+	option bw '1'
+	option country 'US'
+	option region '5'
+	option bgprotect '0'
+	option beacon '100'
+	option dtim '1'
+	option fragthres '2346'
+	option rtsthres '2347'
+	option txpower '100'
+	option txpreamble '1'
+	option shortslot '1'
+	option txburst '1'
+	option pktaggre '1'
+	option ieee80211h '1'
+	option igmpsnoop '1'
+	option ht_bsscoexist '0'
+	option ht_extcha '1'
+	option ht_opmode '0'
+	option ht_gi '1'
+	option ht_rdg '1'
+	option ht_stbc '1'
+	option ht_amsdu '1'
+	option ht_autoba '1'
+	option ht_badec '0'
+	option ht_distkip '1'
+	option ht_ldpc '0'
+	option ht_txstream '2'
+	option ht_rxstream '2'
+	option txbf '0'
+	option channel '6'
+
+config wifi-iface
+	option device 'mt7620'
+	option ifname 'ra0'
+	option mode 'ap'
+	option ssid 'mt7620-2077'
+	option key '12345678'
+	option wmm '1'
+	option apsd '0'
+	option encryption 'psk2+ccmp'
+	option network 'lan'
+
