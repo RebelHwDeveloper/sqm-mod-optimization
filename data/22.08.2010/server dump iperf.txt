@@ -1,0 +1,303 @@
+
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+Accepted connection from 192.168.2.147, port 52904
+[  5] local 192.168.2.180 port 5201 connected to 192.168.2.147 port 52905
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-1.00   sec  2.45 MBytes  20.5 Mbits/sec
+[  5]   1.00-2.00   sec   128 KBytes  1.05 Mbits/sec
+[  5]   2.00-3.00   sec   727 KBytes  5.96 Mbits/sec
+[  5]   3.00-4.00   sec   431 KBytes  3.53 Mbits/sec
+[  5]   4.00-5.00   sec   682 KBytes  5.58 Mbits/sec
+[  5]   5.00-6.00   sec   364 KBytes  2.98 Mbits/sec
+[  5]   6.00-7.00   sec  0.00 Bytes  0.00 bits/sec
+[  5]   7.00-8.00   sec   954 KBytes  7.81 Mbits/sec
+[  5]   8.00-9.00   sec   274 KBytes  2.24 Mbits/sec
+[  5]   9.00-10.00  sec   294 KBytes  2.41 Mbits/sec
+[  5]  10.00-11.00  sec   187 KBytes  1.53 Mbits/sec
+[  5]  11.00-12.00  sec  0.00 Bytes  0.00 bits/sec
+[  5]  12.00-13.00  sec   746 KBytes  6.11 Mbits/sec
+[  5]  13.00-14.00  sec   855 KBytes  7.00 Mbits/sec
+[  5]  14.00-15.00  sec   220 KBytes  1.80 Mbits/sec
+[  5]  15.00-16.00  sec  41.3 KBytes   339 Kbits/sec
+[  5]  16.00-17.00  sec  0.00 Bytes  0.00 bits/sec
+[  5]  17.00-18.00  sec   168 KBytes  1.38 Mbits/sec
+[  5]  18.00-19.00  sec  1.53 MBytes  12.8 Mbits/sec
+[  5]  19.00-20.00  sec   245 KBytes  2.01 Mbits/sec
+[  5]  20.00-21.00  sec   106 KBytes   864 Kbits/sec
+[  5]  21.00-22.00  sec  0.00 Bytes  0.00 bits/sec
+[  5]  22.00-23.00  sec  0.00 Bytes  0.00 bits/sec
+[  5]  23.00-24.00  sec   208 KBytes  1.71 Mbits/sec
+[  5]  24.00-25.00  sec  55.6 KBytes   456 Kbits/sec
+[  5]  25.00-26.00  sec   301 KBytes  2.46 Mbits/sec
+[  5]  26.00-27.00  sec  0.00 Bytes  0.00 bits/sec
+[  5]  27.00-28.00  sec  55.6 KBytes   456 Kbits/sec
+[  5]  28.00-29.00  sec  0.00 Bytes  0.00 bits/sec
+[  5]  29.00-30.00  sec   461 KBytes  3.77 Mbits/sec
+[  5]  30.00-31.00  sec  0.00 Bytes  0.00 bits/sec
+[  5]  31.00-32.00  sec   344 KBytes  2.81 Mbits/sec
+[  5]  32.00-33.00  sec   275 KBytes  2.25 Mbits/sec
+[  5]  33.00-34.00  sec  0.00 Bytes  0.00 bits/sec
+[  5]  34.00-35.00  sec   854 KBytes  7.00 Mbits/sec
+[  5]  35.00-36.00  sec   272 KBytes  2.23 Mbits/sec
+[  5]  36.00-37.00  sec  0.00 Bytes  0.00 bits/sec
+[  5]  37.00-38.00  sec   700 KBytes  5.73 Mbits/sec
+[  5]  38.00-39.00  sec  2.34 MBytes  19.6 Mbits/sec
+[  5]  39.00-40.00  sec   647 KBytes  5.30 Mbits/sec
+[  5]  40.00-41.00  sec   676 KBytes  5.54 Mbits/sec
+[  5]  41.00-42.00  sec   204 KBytes  1.67 Mbits/sec
+[  5]  42.00-43.00  sec   628 KBytes  5.15 Mbits/sec
+[  5]  43.00-44.00  sec   634 KBytes  5.20 Mbits/sec
+[  5]  44.00-45.00  sec  0.00 Bytes  0.00 bits/sec
+[  5]  45.00-46.00  sec  0.00 Bytes  0.00 bits/sec
+[  5]  45.00-46.00  sec  0.00 Bytes  0.00 bits/sec
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-46.00  sec  0.00 Bytes  0.00 bits/sec                  sender
+[  5]   0.00-46.00  sec  18.8 MBytes  3.42 Mbits/sec                  receiver
+iperf3: the client has terminated
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+Accepted connection from 192.168.2.147, port 52906
+[  5] local 192.168.2.180 port 5201 connected to 192.168.2.147 port 54630
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datag
+rams
+[  5]   0.00-1.00   sec   136 KBytes  1.11 Mbits/sec  50.051 ms  0/17 (0%)
+[  5]   1.00-2.00   sec  48.0 KBytes   393 Kbits/sec  35.975 ms  0/6 (0%)
+[  5]   2.00-3.00   sec   176 KBytes  1.44 Mbits/sec  34.289 ms  2/24 (8.3%)
+[  5]   3.00-4.00   sec   184 KBytes  1.51 Mbits/sec  65.470 ms  0/23 (0%)
+[  5]   4.00-5.00   sec   128 KBytes  1.05 Mbits/sec  62.771 ms  0/16 (0%)
+[  5]   5.00-6.00   sec  72.0 KBytes   590 Kbits/sec  37.008 ms  0/9 (0%)
+[  5]   6.00-7.00   sec   184 KBytes  1.51 Mbits/sec  32.793 ms  1/24 (4.2%)
+[  5]   7.00-8.00   sec   144 KBytes  1.18 Mbits/sec  12.668 ms  0/18 (0%)
+[  5]   8.00-9.00   sec   144 KBytes  1.18 Mbits/sec  5.023 ms  0/18 (0%)
+[  5]   9.00-10.00  sec   120 KBytes   983 Kbits/sec  3.726 ms  0/15 (0%)
+[  5]  10.00-11.00  sec   144 KBytes  1.18 Mbits/sec  27.674 ms  2/20 (10%)
+[  5]  11.00-12.00  sec   144 KBytes  1.18 Mbits/sec  11.116 ms  0/18 (0%)
+[  5]  12.00-13.00  sec   128 KBytes  1.05 Mbits/sec  7.796 ms  0/16 (0%)
+[  5]  13.00-14.00  sec   152 KBytes  1.25 Mbits/sec  4.673 ms  0/19 (0%)
+[  5]  14.00-15.00  sec   144 KBytes  1.18 Mbits/sec  4.150 ms  0/18 (0%)
+[  5]  14.00-15.00  sec   144 KBytes  1.18 Mbits/sec  4.150 ms  0/18 (0%)
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datag
+rams
+[  5]   0.00-15.00  sec  0.00 Bytes  0.00 bits/sec  3.288 ms  5/267 (1.9%)
+iperf3: the client has terminated
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+Accepted connection from 192.168.2.147, port 52911
+[  5] local 192.168.2.180 port 5201 connected to 192.168.2.147 port 53417
+iperf3: OUT OF ORDER - incoming packet = 3 and received packet = 4 AND SP = 5
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datag
+rams
+[  5]   0.00-1.00   sec   120 KBytes   983 Kbits/sec  56.504 ms  1/15 (6.7%)
+[  5]   1.00-2.00   sec   128 KBytes  1.05 Mbits/sec  23.368 ms  0/16 (0%)
+iperf3: OUT OF ORDER - incoming packet = 40 and received packet = 41 AND SP = 5
+[  5]   2.00-3.00   sec   128 KBytes  1.05 Mbits/sec  13.401 ms  1/16 (6.2%)
+[  5]   3.00-4.00   sec   136 KBytes  1.11 Mbits/sec  8.849 ms  0/17 (0%)
+iperf3: OUT OF ORDER - incoming packet = 75 and received packet = 76 AND SP = 5
+[  5]   4.00-5.00   sec   112 KBytes   918 Kbits/sec  45.986 ms  2/15 (13%)
+[  5]   5.00-6.00   sec   128 KBytes  1.05 Mbits/sec  18.800 ms  0/16 (0%)
+iperf3: OUT OF ORDER - incoming packet = 102 and received packet = 103 AND SP =
+5
+[  5]   6.00-7.00   sec   136 KBytes  1.11 Mbits/sec  8.564 ms  1/17 (5.9%)
+iperf3: OUT OF ORDER - incoming packet = 126 and received packet = 127 AND SP =
+5
+[  5]   7.00-8.00   sec   128 KBytes  1.05 Mbits/sec  4.495 ms  1/16 (6.2%)
+[  5]   8.00-9.00   sec   128 KBytes  1.05 Mbits/sec  3.344 ms  0/16 (0%)
+[  5]   9.00-10.00  sec   128 KBytes  1.05 Mbits/sec  2.308 ms  0/16 (0%)
+iperf3: OUT OF ORDER - incoming packet = 168 and received packet = 169 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 174 and received packet = 175 AND SP =
+5
+[  5]  10.00-11.00  sec   128 KBytes  1.05 Mbits/sec  5.470 ms  2/16 (12%)
+iperf3: OUT OF ORDER - incoming packet = 179 and received packet = 180 AND SP =
+5
+[  5]  11.00-12.00  sec   128 KBytes  1.05 Mbits/sec  5.097 ms  1/16 (6.2%)
+iperf3: OUT OF ORDER - incoming packet = 198 and received packet = 199 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 200 and received packet = 201 AND SP =
+5
+[  5]  12.00-13.00  sec   120 KBytes   983 Kbits/sec  2.704 ms  2/15 (13%)
+iperf3: OUT OF ORDER - incoming packet = 216 and received packet = 217 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 219 and received packet = 220 AND SP =
+5
+[  5]  13.00-14.00  sec   128 KBytes  1.05 Mbits/sec  2.336 ms  2/16 (12%)
+iperf3: OUT OF ORDER - incoming packet = 227 and received packet = 228 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 235 and received packet = 236 AND SP =
+5
+[  5]  14.00-15.00  sec   128 KBytes  1.05 Mbits/sec  1.810 ms  2/16 (12%)
+iperf3: OUT OF ORDER - incoming packet = 243 and received packet = 244 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 248 and received packet = 249 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 254 and received packet = 255 AND SP =
+5
+[  5]  15.00-16.00  sec   128 KBytes  1.05 Mbits/sec  2.532 ms  3/16 (19%)
+iperf3: OUT OF ORDER - incoming packet = 259 and received packet = 260 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 262 and received packet = 263 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 267 and received packet = 268 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 270 and received packet = 271 AND SP =
+5
+[  5]  16.00-17.00  sec   136 KBytes  1.11 Mbits/sec  3.900 ms  4/17 (24%)
+[  5]  17.00-18.00  sec   128 KBytes  1.05 Mbits/sec  5.581 ms  0/16 (0%)
+iperf3: OUT OF ORDER - incoming packet = 291 and received packet = 292 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 299 and received packet = 300 AND SP =
+5
+[  5]  18.00-19.00  sec   128 KBytes  1.05 Mbits/sec  4.561 ms  2/16 (12%)
+iperf3: OUT OF ORDER - incoming packet = 307 and received packet = 308 AND SP =
+5
+[  5]  19.00-20.00  sec   128 KBytes  1.05 Mbits/sec  3.259 ms  1/16 (6.2%)
+[  5]  20.00-21.00  sec  32.0 KBytes   262 Kbits/sec  35.669 ms  1/5 (20%)
+iperf3: OUT OF ORDER - incoming packet = 334 and received packet = 335 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 339 and received packet = 340 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 344 and received packet = 345 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 347 and received packet = 348 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 350 and received packet = 351 AND SP =
+5
+[  5]  21.00-22.00  sec   200 KBytes  1.64 Mbits/sec  19.524 ms  6/26 (23%)
+[  5]  22.00-23.00  sec   128 KBytes  1.05 Mbits/sec  8.951 ms  0/16 (0%)
+iperf3: OUT OF ORDER - incoming packet = 371 and received packet = 372 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 382 and received packet = 383 AND SP =
+5
+[  5]  23.00-24.00  sec   128 KBytes  1.05 Mbits/sec  5.975 ms  2/16 (12%)
+iperf3: OUT OF ORDER - incoming packet = 387 and received packet = 388 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 390 and received packet = 391 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 395 and received packet = 396 AND SP =
+5
+[  5]  24.00-25.00  sec   128 KBytes  1.05 Mbits/sec  5.503 ms  3/16 (19%)
+iperf3: OUT OF ORDER - incoming packet = 411 and received packet = 412 AND SP =
+5
+[  5]  25.00-26.00  sec   136 KBytes  1.11 Mbits/sec  4.632 ms  1/17 (5.9%)
+iperf3: OUT OF ORDER - incoming packet = 427 and received packet = 428 AND SP =
+5
+[  5]  26.00-27.00  sec   120 KBytes   983 Kbits/sec  4.054 ms  1/15 (6.7%)
+iperf3: OUT OF ORDER - incoming packet = 443 and received packet = 444 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 446 and received packet = 447 AND SP =
+5
+[  5]  27.00-28.00  sec   136 KBytes  1.11 Mbits/sec  3.822 ms  2/17 (12%)
+iperf3: OUT OF ORDER - incoming packet = 451 and received packet = 452 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 462 and received packet = 463 AND SP =
+5
+[  5]  28.00-29.00  sec   120 KBytes   983 Kbits/sec  3.547 ms  2/15 (13%)
+iperf3: OUT OF ORDER - incoming packet = 467 and received packet = 468 AND SP =
+5
+[  5]  29.00-30.00  sec   128 KBytes  1.05 Mbits/sec  7.393 ms  1/16 (6.2%)
+iperf3: OUT OF ORDER - incoming packet = 486 and received packet = 487 AND SP =
+5
+[  5]  30.00-31.00  sec   136 KBytes  1.11 Mbits/sec  5.311 ms  1/17 (5.9%)
+iperf3: OUT OF ORDER - incoming packet = 502 and received packet = 503 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 510 and received packet = 511 AND SP =
+5
+[  5]  31.00-32.00  sec   120 KBytes   983 Kbits/sec  5.445 ms  2/15 (13%)
+iperf3: OUT OF ORDER - incoming packet = 518 and received packet = 519 AND SP =
+5
+[  5]  32.00-33.00  sec   144 KBytes  1.18 Mbits/sec  4.626 ms  1/18 (5.6%)
+[  5]  33.00-34.01  sec   120 KBytes   978 Kbits/sec  4.241 ms  0/15 (0%)
+[  5]  34.01-35.00  sec   128 KBytes  1.05 Mbits/sec  3.867 ms  0/16 (0%)
+[  5]  35.00-36.00  sec   120 KBytes   983 Kbits/sec  3.611 ms  0/15 (0%)
+iperf3: OUT OF ORDER - incoming packet = 582 and received packet = 583 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 590 and received packet = 591 AND SP =
+5
+[  5]  36.00-37.00  sec   128 KBytes  1.05 Mbits/sec  4.188 ms  2/16 (12%)
+iperf3: OUT OF ORDER - incoming packet = 600 and received packet = 601 AND SP =
+5
+[  5]  37.00-38.00  sec   136 KBytes  1.11 Mbits/sec  3.784 ms  1/17 (5.9%)
+[  5]  38.00-39.00  sec   128 KBytes  1.05 Mbits/sec  5.063 ms  0/16 (0%)
+iperf3: OUT OF ORDER - incoming packet = 635 and received packet = 636 AND SP =
+5
+[  5]  39.00-40.00  sec   120 KBytes   983 Kbits/sec  6.686 ms  1/15 (6.7%)
+iperf3: OUT OF ORDER - incoming packet = 643 and received packet = 644 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 651 and received packet = 652 AND SP =
+5
+[  5]  40.00-41.00  sec   136 KBytes  1.11 Mbits/sec  4.070 ms  2/17 (12%)
+[  5]  41.00-42.00  sec   120 KBytes   983 Kbits/sec  3.361 ms  0/15 (0%)
+[  5]  42.00-43.00  sec   144 KBytes  1.18 Mbits/sec  7.318 ms  0/18 (0%)
+[  5]  43.00-44.00  sec   112 KBytes   918 Kbits/sec  6.574 ms  0/14 (0%)
+[  5]  44.00-45.00  sec   144 KBytes  1.18 Mbits/sec  6.159 ms  0/18 (0%)
+iperf3: OUT OF ORDER - incoming packet = 731 and received packet = 732 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 734 and received packet = 735 AND SP =
+5
+[  5]  45.00-46.00  sec   120 KBytes   983 Kbits/sec  4.430 ms  2/15 (13%)
+iperf3: OUT OF ORDER - incoming packet = 747 and received packet = 748 AND SP =
+5
+[  5]  46.00-47.00  sec   120 KBytes   983 Kbits/sec  4.455 ms  1/15 (6.7%)
+iperf3: OUT OF ORDER - incoming packet = 760 and received packet = 761 AND SP =
+5
+[  5]  47.00-48.00  sec   128 KBytes  1.05 Mbits/sec  3.852 ms  1/16 (6.2%)
+[  5]  48.00-49.00  sec   128 KBytes  1.05 Mbits/sec  4.519 ms  0/16 (0%)
+[  5]  49.00-50.00  sec   128 KBytes  1.05 Mbits/sec  4.620 ms  0/16 (0%)
+iperf3: OUT OF ORDER - incoming packet = 811 and received packet = 812 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 814 and received packet = 815 AND SP =
+5
+[  5]  50.00-51.00  sec   128 KBytes  1.05 Mbits/sec  4.855 ms  2/16 (12%)
+iperf3: OUT OF ORDER - incoming packet = 819 and received packet = 820 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 822 and received packet = 823 AND SP =
+5
+[  5]  51.00-52.00  sec   128 KBytes  1.05 Mbits/sec  4.492 ms  2/16 (12%)
+iperf3: OUT OF ORDER - incoming packet = 843 and received packet = 844 AND SP =
+5
+[  5]  52.00-53.00  sec   136 KBytes  1.11 Mbits/sec  3.914 ms  1/17 (5.9%)
+[  5]  53.00-54.00  sec   128 KBytes  1.05 Mbits/sec  4.431 ms  0/16 (0%)
+[  5]  54.00-55.00  sec   120 KBytes   983 Kbits/sec  41.432 ms  1/16 (6.2%)
+iperf3: OUT OF ORDER - incoming packet = 883 and received packet = 884 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 894 and received packet = 895 AND SP =
+5
+[  5]  55.00-56.00  sec   128 KBytes  1.05 Mbits/sec  18.880 ms  2/16 (12%)
+iperf3: OUT OF ORDER - incoming packet = 904 and received packet = 905 AND SP =
+5
+iperf3: OUT OF ORDER - incoming packet = 907 and received packet = 908 AND SP =
+5
+[  5]  56.00-57.00  sec   128 KBytes  1.05 Mbits/sec  10.156 ms  2/16 (12%)
+iperf3: OUT OF ORDER - incoming packet = 920 and received packet = 921 AND SP =
+5
+[  5]  57.00-58.00  sec   120 KBytes   983 Kbits/sec  7.064 ms  1/15 (6.7%)
+iperf3: OUT OF ORDER - incoming packet = 939 and received packet = 940 AND SP =
+5
+[  5]  58.00-59.00  sec   128 KBytes  1.05 Mbits/sec  5.464 ms  1/16 (6.2%)
+[  5]  59.00-60.00  sec   128 KBytes  1.05 Mbits/sec  3.872 ms  0/16 (0%)
+[  5]  60.00-60.01  sec  0.00 Bytes  0.00 bits/sec  3.872 ms  0/0 (0%)
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Jitter    Lost/Total Datag
+rams
+[  5]   0.00-60.01  sec  0.00 Bytes  0.00 bits/sec  3.872 ms  70/959 (7.3%)
+[SUM]  0.0-60.0 sec  66 datagrams received out-of-order
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+iperf3: interrupt - the server has terminated
+
+--------------------------------------------------------------------
+Version:iperf.exe -v
+
+C:\Users\renelalliance\Desktop\iperf-3.1.3-win64>
+iperf 3.1.3
+CYGWIN_NT-6.1 icarus 2.5.1(0.297/5/3) 
+2016-04-21 22:14 x86_64
+
+Optional features available: None

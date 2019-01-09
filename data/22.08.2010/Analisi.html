@@ -1,0 +1,175 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Statistical analisys of the network for the Connect Kit</title><meta name="generator" content="MATLAB 9.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-06-22"><meta name="DC.source" content="Analisi.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Statistical analisys of the network for the Connect Kit</h1><!--introduction--><p>Copyright 2018 - 2018 Rebel Alliance, srl.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Abstract</a></li><li><a href="#2">Data</a></li><li><a href="#4">Preliminary analysis</a></li></ul></div><h2 id="1">Abstract</h2><p>This is a simple statistical analysis of the network performance observed during normal operation. We hope that this file helps detecting the problem. As far as we know about this network configuration, the topology seems preety simple, without secondary (redundant) routes or rings. What we observed (and hope it's explicit from the data) was a complete collapse of the network during the video transmission. Although it may seem plausible a degradation of the performances, a complete and much persistent congestion is not explainable. With this tools we hope to clarify the problem and work out together a solution.</p><h2 id="2">Data</h2><p>97 packets have been directly collected as a representative sample for the system's performances. They have been grouped in 2 categories, based on the network state</p><div><ul><li>Ping</li><li>Iperf</li><li>TCP Vanilla connect (todo)</li><li>UDP Vanilla connect (todo)</li></ul></div><p>Although many other measurement methods exist, I used the ping and Iperf tools as the most straightforward and repeatable ones. The data from the study is stored in a Microsoft Excel (R) file. You can simply add or modify the whole raw dataset, with your own measurements.</p><p>The columns in the data are as follows:</p><div><ul><li>ID          - Packet ID (time)</li><li>Group       - Network state group</li><li>Latency     - RTT (ms)</li><li>Transmitted - Quantity of data transmitted (Mb)</li><li>Throughput  - Actual Goodput (Mb/s)</li></ul></div><p>We will import the data into a dataset array that affords better data managemment and organization.</p><pre class="codeinput"><span class="comment">% Import data from an Excel file</span>
+ ds = dataset(<span class="string">'xlsfile'</span>, <span class="string">'Dati.xlsx'</span>) ;
+</pre><h2 id="4">Preliminary analysis</h2><p>Our primary efficacy endpoint is the latency of the network. We'll plot this and the norm of the residuals from the linear fitting model. We see from the figure that the linear fitting is really good with a bad peak in the "Just Unloaded" section, due to remaining network congestion.</p><pre class="codeinput"><span class="comment">% Use custom scatter plot</span>
+ RTT_Plot(ds.ID, ds.Latency) ;
+</pre><img vspace="5" hspace="5" src="Analisi_01.png" alt=""> <p>The mean RTT level at baseline is around 20 ms and mean level after Unloading is 76 ms. So, at least for the data pooled across the two loading groups, it seems that the loading causes persistent congestion of the network.</p><pre class="codeinput"><span class="comment">% Use a grouped scatter plot</span>
+  figure
+  gscatter(ds.ID, ds.Latency, ds.Group)
+</pre><img vspace="5" hspace="5" src="Analisi_02.png" alt=""> <p>The grouped plot shows that RTT before the start of the VLC video have optimal values. However, the RTT right after unloading expose a big difference between groups. What this plot missed is the RTT during net loading, that's because it was not possible to have a response during video transmission, so no group has been devised.</p><p>In this section, we will use percentage change of RTT from the baseline level as the primary metric of congestion.</p><pre class="codeinput"><span class="comment">% Calculate the percentage improvement over baseline level by extracting</span>
+<span class="comment">% the first 37 packet and the last 37 packets (Just Unloaded group),</span>
+<span class="comment">% indices trimming was necessary for dimensions equality.</span>
+
+  ds.Change_RTT = ( ds.Latency(1:38) - ds.Latency(60:97) ) ./ ds.Latency(1:38) * 100 ;
+</pre><pre class="codeoutput">Warning: Observations with default values added to dataset variable
+'Change_RTT'. 
+</pre><p>In the following graph, we can see that</p><div><ol><li>In the first half of the plot we have a dramatic increase of the RTT compared to the "Just Unloaded" group,</li><li>The second half has been used as the reference of the change...</li></ol></div><p>Visualize effect of unloading on network decongestion</p><pre class="codeinput">  scatter_change(ds.ID(15:60), ds.Change_RTT(15:60));
+</pre><img vspace="5" hspace="5" src="Analisi_03.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Statistical analisys of the network for the Connect Kit
+% Copyright 2018 - 2018 Rebel Alliance, srl.
+
+%% Abstract
+% This is a simple statistical analysis of the network performance observed
+% during normal operation. We hope that this file helps detecting the
+% problem. As far as we know about this network configuration, the topology
+% seems preety simple, without secondary (redundant) routes or rings. What
+% we observed (and hope it's explicit from the data) was a complete
+% collapse of the network during the video transmission. Although it may
+% seem plausible a degradation of the performances, a complete and much
+% persistent congestion is not explainable. With this tools we hope to
+% clarify the problem and work out together a solution.
+%
+
+%% Data 
+% 97 packets have been directly collected as a representative sample for
+% the system's performances. They have been grouped in 2 categories, based
+% on the network state
+% 
+% * Ping 
+% * Iperf 
+% * TCP Vanilla connect (todo)
+% * UDP Vanilla connect (todo)
+% 
+% Although many other measurement methods exist, I used the ping and Iperf
+% tools as the most straightforward and repeatable ones. 
+% The data from the study is stored in a Microsoft Excel (R) file. You can
+% simply add or modify the whole raw dataset, with your own measurements.
+%
+% The columns in the data are as follows:
+%
+% * ID          - Packet ID (time)
+% * Group       - Network state group
+% * Latency     - RTT (ms) 
+% * Transmitted - Quantity of data transmitted (Mb)
+% * Throughput  - Actual Goodput (Mb/s)
+
+%% 
+% We will import the data into a dataset array that affords better data
+% managemment and organization. 
+
+% Import data from an Excel file
+ ds = dataset('xlsfile', 'Dati.xlsx') ;
+ 
+%% Preliminary analysis
+% Our primary efficacy endpoint is the latency of the network. We'll plot
+% this and the norm of the residuals from the linear fitting model. We see
+% from the figure that the linear fitting is really good with a bad peak in
+% the "Just Unloaded" section, due to remaining network congestion.
+
+% Use custom scatter plot
+ RTT_Plot(ds.ID, ds.Latency) ;
+%% 
+% The mean RTT level at baseline is around 20 ms and mean level after
+% Unloading is 76 ms. So, at least for the data pooled across the
+% two loading groups, it seems that the loading causes persistent
+% congestion of the network.
+
+% Use a grouped scatter plot
+  figure 
+  gscatter(ds.ID, ds.Latency, ds.Group)   
+
+%%
+% The grouped plot shows that RTT before the start of the VLC video
+% have optimal values. However, the RTT right after unloading expose a big
+% difference between groups. What this plot missed is the RTT during net
+% loading, that's because it was not possible to have a response during
+% video transmission, so no group has been devised.
+%
+% In this section, we will use percentage change of RTT from the baseline
+% level as the primary metric of congestion. 
+
+% Calculate the percentage improvement over baseline level by extracting
+% the first 37 packet and the last 37 packets (Just Unloaded group),
+% indices trimming was necessary for dimensions equality.
+
+  ds.Change_RTT = ( ds.Latency(1:38) - ds.Latency(60:97) ) ./ ds.Latency(1:38) * 100 ;
+  
+%% 
+% In the following graph, we can see that 
+% 
+% # In the first half of the plot we have a dramatic increase of the RTT
+% compared to the "Just Unloaded" group,
+% # The second half has been used as the reference of the change...
+%
+% Visualize effect of unloading on network decongestion
+  scatter_change(ds.ID(15:60), ds.Change_RTT(15:60));
+##### SOURCE END #####
+--></body></html>
