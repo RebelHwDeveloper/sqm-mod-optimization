@@ -7,7 +7,7 @@ First, you need to create the same configuration.
 2.	Install the sysupgrade file (flash the new firmware)
 3.	Restore the backup (or copy by hand sqm, network and firewall config files)
 
-Second, you need to test. (This can be done before flashing the new image as well to compare the test results, before and after)
+Second, you need to test. (This can be done before flashing the new image to compare the test results, before and after)
 1.	Start with a streaming (refer to instructions file)			            
 2.	Measure with Wireshark and VLC statistics		                         
 3.	Stress the system with iperf and collect his results as well	      
